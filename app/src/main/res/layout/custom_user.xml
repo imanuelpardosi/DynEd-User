@@ -5,12 +5,16 @@
     android:orientation="horizontal"
     android:padding="10dp">
 
-    <ImageView
+    <TextView
         android:id="@+id/photo_profile"
-        android:layout_width="0dp"
-        android:background="@drawable/ic_menu_camera"
-        android:layout_height="75dp"
-        android:layout_weight="30"
+        android:text="A"
+        android:layout_width="65dp"
+        android:background="@drawable/blue1"
+        android:layout_height="65dp"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:elegantTextHeight="true"
+        android:textColor="@color/material_grey_300"
         android:contentDescription="@string/app_name" />
 
     <TextView
@@ -20,6 +24,7 @@
         android:layout_gravity="center"
         android:layout_weight="70"
         android:gravity="center"
-        android:text="test"
+        android:textSize="8pt"
+        android:text=""
         android:textStyle="bold" />
 </LinearLayout>

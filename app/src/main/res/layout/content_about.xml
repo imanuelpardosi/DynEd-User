@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/header_cover_image"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/header" />
+
+        <ImageButton
+            android:id="@+id/photo_profile"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/header_cover_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-60dp"
+            android:background="@drawable/profile_circular_border_imageview"
+            android:elevation="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/photo_profile_nuel" />
+
+        <RelativeLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_cover_image"
+            android:background="#2c89b8"
+            android:elevation="4dp"
+            android:paddingBottom="7dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="62dp"
+                android:text="Imanuel Pardosi"
+                android:textColor="#fff"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/quote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="3dp"
+                android:text="even darkness must pass."
+                android:textColor="#fff"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profile_layout"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_menu_phone"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:text="+6282267610077" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_menu_email"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:text="imanuelpardosi@gmail.com" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_menu_address"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:text="Jl. Mesjid Lumban Pea, Balige, Toba Samosir, Sumatera Utara, Indonesia" />
+
+            <TextView
+                android:id="@+id/campus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_menu_campus"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:text="Campus" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#ffffff"
+                android:elevation="4dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/linkedin"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_menu_linkedin"
+                    android:paddingRight="2dp"
+                    ></ImageView>
+
+                <ImageView
+                    android:id="@+id/github"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_menu_github"
+                    ></ImageView>
+
+                <ImageView
+                    android:id="@+id/facebook"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:paddingLeft="2dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_menu_facebook"
+                    ></ImageView>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
