@@ -225,7 +225,6 @@ public class About extends AppCompatActivity
                     });
             AlertDialog alert = builder.create();
             alert.show();
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

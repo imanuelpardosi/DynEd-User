@@ -1,9 +1,14 @@
 package com.dyned.imanuel.dyneduser.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by nuel4 on 09/09/2016.
  */
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
     int id;
     String name;
     String username;

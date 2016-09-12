@@ -1,9 +1,11 @@
 package com.dyned.imanuel.dyneduser.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by nuel4 on 10/09/2016.
  */
-public class Company {
+public class Company implements Serializable {
     String name;
     String catchPhrase;
     String bs;

@@ -41,16 +41,11 @@ public class UserAdapter extends ArrayAdapter<User> {
         Holder holder;
         holder = new Holder();
         if (view == null) {
-            // View doesn't exist so create it and create the holder
             view = mInflater.inflate(R.layout.custom_user, parent, false);
-
-
             holder.photo_profile = (TextView) view.findViewById(R.id.photo_profile);
             holder.username = (TextView) view.findViewById(R.id.username);
-
             view.setTag(holder);
         } else {
-            // Just get our existing holder
             holder = (Holder) view.getTag();
         }
         if (position % 2 == 0) {
@@ -59,7 +54,6 @@ public class UserAdapter extends ArrayAdapter<User> {
             holder.photo_profile.setBackgroundResource(R.drawable.blue2);
         }
 
-        // Populate via the holder for speed
         User stream = getItem(position);
         holder.photo_profile.setText(stream.getUsername().substring(0, 1));
         holder.username.setText(stream.getUsername());
@@ -84,7 +78,6 @@ public class UserAdapter extends ArrayAdapter<User> {
         notifyDataSetChanged();
     }
 
-    // Holder class used to efficiently recycle view positions
     private static final class Holder {
         public TextView photo_profile;
         public TextView username;

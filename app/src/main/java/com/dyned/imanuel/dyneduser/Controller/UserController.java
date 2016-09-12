@@ -39,7 +39,6 @@ public class UserController {
     public static final String COMPANY_CATCHPHRASE = "company_catchphrase";
     public static final String COMPANY_BS = "company_bs";
 
-
     public static final String CREATE_USER = "CREATE TABLE " + TABLE_NAME + "" +
             "(" + ID + " integer primary key, " +
             NAME + " VARCHAR(32), " +

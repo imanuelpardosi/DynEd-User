@@ -1,9 +1,11 @@
 package com.dyned.imanuel.dyneduser.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by nuel4 on 10/09/2016.
  */
-public class Geo {
+public class Geo implements Serializable {
     String lat;
     String lng;
 

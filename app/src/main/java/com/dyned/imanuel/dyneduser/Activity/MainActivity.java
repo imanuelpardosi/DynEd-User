@@ -22,7 +22,10 @@ import android.widget.ListView;
 
 import com.dyned.imanuel.dyneduser.Adapter.UserAdapter;
 import com.dyned.imanuel.dyneduser.Controller.UserController;
+import com.dyned.imanuel.dyneduser.Model.User;
 import com.dyned.imanuel.dyneduser.R;
+
+import java.io.Serializable;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         listView = (ListView) findViewById(R.id.listView);
-        UserController myData = new UserController(this);
+        final UserController myData = new UserController(this);
         myData.open();
         myData.getData();
 
@@ -60,8 +63,10 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent sendIntent = new Intent(getApplicationContext(), UserDetail.class);
-                Log.d("onCreate", "position " + position);
-                sendIntent.putExtra("position", position);
+
+                User user = (User) parent.getItemAtPosition(position);
+
+                sendIntent.putExtra("user", user);
                 startActivity(sendIntent);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }

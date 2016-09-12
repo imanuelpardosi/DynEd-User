@@ -1,21 +1,16 @@
 package com.dyned.imanuel.dyneduser.Activity;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.dyned.imanuel.dyneduser.Model.User;
 import com.dyned.imanuel.dyneduser.R;
-import com.dyned.imanuel.dyneduser.Controller.UserController;
 
 import java.util.Locale;
 
@@ -43,11 +38,9 @@ public class UserDetail extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Intent mIntent = getIntent();
-        int position = mIntent.getIntExtra("position", 0);
+        Intent intent = getIntent();
 
-        UserController myData = new UserController(this);
-        myData.open();
+        User user = (User) intent.getSerializableExtra("user");
 
         photo_profile = (ImageView) findViewById(R.id.user_profile_photo);
         photo_profile.bringToFront();
@@ -62,24 +55,21 @@ public class UserDetail extends AppCompatActivity {
         geo = (TextView) findViewById(R.id.geo);
         company = (TextView) findViewById(R.id.company);
 
-        name.setText(myData.getData().get(position).getName());
-        username.setText(myData.getData().get(position).getUsername());
-        email.setText(myData.getData().get(position).getEmail());
+        name.setText(user.getName());
+        username.setText(user.getUsername());
+        email.setText(user.getEmail());
 
-        phone.setText(myData.getData().get(position).getPhone());
-        website.setText(myData.getData().get(position).getWebsite());
-        address.setText(myData.getData().get(position).getAddress().getStreet() + ", " +
-                myData.getData().get(position).getAddress().getSuite()
-                + ", " + myData.getData().get(position).getAddress().getCity());
-        zipcode.setText(myData.getData().get(position).getAddress().getZipcode());
-        geo.setText("• " + myData.getData().get(position).getAddress().getGeo().getLat() +
-                "   • " + myData.getData().get(position).getAddress().getGeo().getLng());
-        company.setText(Html.fromHtml("<b>" + myData.getData().get(position).getCompany().getName() +
-                "</b><br/>" + myData.getData().get(position).getCompany().getCatchPhrase()
-                + "<br/>" + myData.getData().get(position).getCompany().getBs()));
+        phone.setText(user.getPhone());
+        website.setText(user.getWebsite());
+        address.setText(user.getAddress().getStreet() + ", " + user.getAddress().getSuite()
+                + ", " + user.getAddress().getCity());
+        zipcode.setText(user.getAddress().getZipcode());
+        geo.setText("• " + user.getAddress().getGeo().getLat() + "   • " + user.getAddress().getGeo().getLng());
+        company.setText(Html.fromHtml("<b>" + user.getCompany().getName() + "</b><br/>" +
+                user.getCompany().getCatchPhrase() + "<br/>" + user.getCompany().getBs()));
 
-        lat = Double.parseDouble(myData.getData().get(position).getAddress().getGeo().getLat());
-        lng = Double.parseDouble(myData.getData().get(position).getAddress().getGeo().getLng());
+        lat = Double.parseDouble(user.getAddress().getGeo().getLat());
+        lng = Double.parseDouble(user.getAddress().getGeo().getLng());
 
         email.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -101,7 +91,7 @@ public class UserDetail extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://"+website.getText().toString()));
+                intent.setData(Uri.parse("http://" + website.getText().toString()));
                 startActivity(intent);
             }
         });
@@ -122,5 +112,4 @@ public class UserDetail extends AppCompatActivity {
             }
         });
     }
-
 }
