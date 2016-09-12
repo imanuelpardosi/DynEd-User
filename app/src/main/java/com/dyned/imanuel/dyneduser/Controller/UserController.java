@@ -128,17 +128,17 @@ public class UserController {
         curData.setUsername(cursor.getString(2));
         curData.setEmail(cursor.getString(3));
 
-        curData.address.setStreet(cursor.getString(4));
-        curData.address.setSuite(cursor.getString(5));
-        curData.address.setCity(cursor.getString(6));
-        curData.address.setZipcode(cursor.getString(7));
-        curData.address.geo.setLat(cursor.getString(8));
-        curData.address.geo.setLng(cursor.getString(9));
+        curData.getAddress().setStreet(cursor.getString(4));
+        curData.getAddress().setSuite(cursor.getString(5));
+        curData.getAddress().setCity(cursor.getString(6));
+        curData.getAddress().setZipcode(cursor.getString(7));
+        curData.getAddress().getGeo().setLat(cursor.getString(8));
+        curData.getAddress().getGeo().setLng(cursor.getString(9));
         curData.setPhone(cursor.getString(10));
         curData.setWebsite(cursor.getString(11));
-        curData.company.setName(cursor.getString(12));
-        curData.company.setCatchPhrase(cursor.getString(13));
-        curData.company.setBs(cursor.getString(14));
+        curData.getCompany().setName(cursor.getString(12));
+        curData.getCompany().setCatchPhrase(cursor.getString(13));
+        curData.getCompany().setBs(cursor.getString(14));
 
         return curData;
     }

@@ -8,11 +8,11 @@
     <TextView
         android:id="@+id/photo_profile"
         android:text="A"
-        android:layout_width="65dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:background="@drawable/blue1"
-        android:layout_height="65dp"
         android:gravity="center"
-        android:textSize="40dp"
+        android:textSize="30dp"
         android:elegantTextHeight="true"
         android:textColor="@color/material_grey_300"
         android:contentDescription="@string/app_name" />
@@ -23,8 +23,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="70"
-        android:gravity="center"
+        android:paddingLeft="20dp"
         android:textSize="8pt"
-        android:text=""
-        android:textStyle="bold" />
+        android:text="Username"
+         />
 </LinearLayout>

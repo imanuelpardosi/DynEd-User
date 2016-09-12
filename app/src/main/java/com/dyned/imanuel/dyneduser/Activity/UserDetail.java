@@ -1,11 +1,15 @@
 package com.dyned.imanuel.dyneduser.Activity;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,6 +41,8 @@ public class UserDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_detail);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Intent mIntent = getIntent();
         int position = mIntent.getIntExtra("position", 0);
 
@@ -62,15 +68,18 @@ public class UserDetail extends AppCompatActivity {
 
         phone.setText(myData.getData().get(position).getPhone());
         website.setText(myData.getData().get(position).getWebsite());
-        address.setText(myData.getData().get(position).address.getStreet() + ", " + myData.getData().get(position).address.getSuite()
-                + ", " + myData.getData().get(position).address.getCity());
-        zipcode.setText(myData.getData().get(position).address.getZipcode());
-        geo.setText("• " + myData.getData().get(position).address.geo.getLat() + "   • " + myData.getData().get(position).address.geo.getLng());
-        company.setText(Html.fromHtml("<b>" + myData.getData().get(position).company.getName() + "</b><br/>" + myData.getData().get(position).company.getCatchPhrase()
-                + "<br/>" + myData.getData().get(position).company.getBs()));
+        address.setText(myData.getData().get(position).getAddress().getStreet() + ", " +
+                myData.getData().get(position).getAddress().getSuite()
+                + ", " + myData.getData().get(position).getAddress().getCity());
+        zipcode.setText(myData.getData().get(position).getAddress().getZipcode());
+        geo.setText("• " + myData.getData().get(position).getAddress().getGeo().getLat() +
+                "   • " + myData.getData().get(position).getAddress().getGeo().getLng());
+        company.setText(Html.fromHtml("<b>" + myData.getData().get(position).getCompany().getName() +
+                "</b><br/>" + myData.getData().get(position).getCompany().getCatchPhrase()
+                + "<br/>" + myData.getData().get(position).getCompany().getBs()));
 
-        lat = Double.parseDouble(myData.getData().get(position).address.geo.getLat());
-        lng = Double.parseDouble(myData.getData().get(position).address.geo.getLng());
+        lat = Double.parseDouble(myData.getData().get(position).getAddress().getGeo().getLat());
+        lng = Double.parseDouble(myData.getData().get(position).getAddress().getGeo().getLng());
 
         email.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -113,4 +122,5 @@ public class UserDetail extends AppCompatActivity {
             }
         });
     }
+
 }

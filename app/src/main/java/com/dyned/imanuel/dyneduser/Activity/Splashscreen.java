@@ -41,7 +41,7 @@ public class Splashscreen extends AppCompatActivity {
 
         myContext = getApplicationContext();
 
-        int idx = random.nextInt(quote.length + 1);
+        int idx = random.nextInt((quote.length-1) + 1);
         progress = ProgressDialog.show(Splashscreen.this, "Initialize Data", quote[idx], true);
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
@@ -61,10 +61,10 @@ public class Splashscreen extends AppCompatActivity {
                         Log.d("onResponse", "lat " + result.getAddress().getGeo().getLat());
                         Log.d("onResponse", "company name " + result.getCompany().getName());
                         userController.insertData(result.getId(), result.getName(), result.getUsername(),
-                                result.getEmail(), result.address.getStreet(), result.address.getSuite(),
-                                result.address.getCity(), result.address.getZipcode(), result.address.geo.getLat(),
-                                result.address.geo.getLng(), result.getPhone(), result.getWebsite(),
-                                result.company.getName(), result.company.getCatchPhrase(), result.company.getBs());
+                                result.getEmail(), result.getAddress().getStreet(), result.getAddress().getSuite(),
+                                result.getAddress().getCity(), result.getAddress().getZipcode(), result.getAddress().getGeo().getLat(),
+                                result.getAddress().getGeo().getLng(), result.getPhone(), result.getWebsite(),
+                                result.getCompany().getName(), result.getCompany().getCatchPhrase(), result.getCompany().getBs());
                     }
                     Intent sendIntent = new Intent(myContext, MainActivity.class);
                     startActivity(sendIntent);

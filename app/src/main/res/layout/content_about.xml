@@ -67,20 +67,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginTop="3dp"
-                android:background="#fff"
-                android:clickable="true"
-                android:drawableRight="@drawable/ic_menu_phone"
-                android:elevation="4dp"
-                android:padding="20dp"
-                android:text="+6282267610077" />
-
-            <TextView
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,6 +79,20 @@
                 android:elevation="4dp"
                 android:padding="20dp"
                 android:text="imanuelpardosi@gmail.com" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginTop="3dp"
+                android:background="#fff"
+                android:clickable="true"
+                android:drawableRight="@drawable/ic_menu_phone"
+                android:elevation="4dp"
+                android:padding="20dp"
+                android:text="+6282267610077" />
 
             <TextView
                 android:id="@+id/address"
@@ -134,10 +134,9 @@
                     android:id="@+id/linkedin"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:scaleType="fitStart"
-                    android:src="@drawable/ic_menu_linkedin"
                     android:paddingRight="2dp"
-                    ></ImageView>
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_menu_linkedin"></ImageView>
 
                 <ImageView
                     android:id="@+id/github"
@@ -146,8 +145,7 @@
                     android:paddingLeft="2dp"
                     android:paddingRight="2dp"
                     android:scaleType="fitStart"
-                    android:src="@drawable/ic_menu_github"
-                    ></ImageView>
+                    android:src="@drawable/ic_menu_github"></ImageView>
 
                 <ImageView
                     android:id="@+id/facebook"
@@ -155,8 +153,7 @@
                     android:layout_height="50dp"
                     android:paddingLeft="2dp"
                     android:scaleType="fitStart"
-                    android:src="@drawable/ic_menu_facebook"
-                    ></ImageView>
+                    android:src="@drawable/ic_menu_facebook"></ImageView>
 
 
             </LinearLayout>
