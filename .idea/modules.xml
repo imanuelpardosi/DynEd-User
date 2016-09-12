@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DynEdUser.iml" filepath="$PROJECT_DIR$/DynEdUser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DynEd-User.iml" filepath="$PROJECT_DIR$/DynEd-User.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
