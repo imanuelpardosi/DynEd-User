@@ -162,7 +162,8 @@ public class MainActivity extends AppCompatActivity
                     .setCancelable(false)
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            System.exit(0);
+                            finish();
+                            moveTaskToBack(true);
                         }
                     })
                     .setNegativeButton("No", new DialogInterface.OnClickListener() {
